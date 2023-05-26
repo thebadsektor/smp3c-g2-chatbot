@@ -41,4 +41,4 @@ def get_bot_response():
 if __name__ == "__main__":
     app.run()
 
-    #G2 Test comment
+    #G2 test comment
