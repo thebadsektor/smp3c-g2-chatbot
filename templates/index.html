@@ -21,14 +21,14 @@
         .card {
             width: 33.33%;
             height: 90%;
-            background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp7236340.jpgimg_girl.jpg');
+           
 
         }
 
         .card-body {
             overflow-y: auto;
             height: calc(100% - 2.5rem - 2.5rem); /* subtract the heights of the header and footer */
-
+            background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp7236340.jpgimg_girl.jpg');
         }
 
         .chat-response-wrapper {
@@ -93,7 +93,7 @@
 
         function bot_greet(firstText) {
           $.get("/get", { msg: firstText }).done(function(data) {
-            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">G2chatbot </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
+            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">g2bot </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
             $("#chatbox").append(botHtml);
           });
         }
@@ -101,7 +101,7 @@
         function get_response() {
           $.get("/get", { msg: rawText }).done(function(data) {
             console.log(rawText);
-            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">G2chatbot </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
+            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">g2bot </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
             $("#chatbox").append(botHtml);
           });
         }
