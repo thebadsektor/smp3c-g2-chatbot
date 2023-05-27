@@ -26,7 +26,8 @@ h3 {
   padding:3px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-	border: 1px solid white;
+	border: 1px solid white
+    
 }
 
 #chatbox {
@@ -59,7 +60,7 @@ h3 {
 #textInput {
     width: 90%;
     border: none;
-    border-bottom: 3px solid #009688;
+    border-bottom: 3px solid #d190c9;
     font-family: monospace;
     font-size: 20px;
 }
