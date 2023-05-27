@@ -60,14 +60,13 @@ h3 {
 
 #textInput {
     width: 90%;
-    border: 2px solid violet;
+    border: none;
     border-bottom: 3px solid #d190c9;
     font-family: monospace;
     font-size: 20px;
 }
 
 #buttonInput {
-    padding: 3px;
     font-family: monospace;
     font-size: 17px;
 }
