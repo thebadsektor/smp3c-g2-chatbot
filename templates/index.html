@@ -44,16 +44,37 @@
             margin-bottom: 0.2rem; /* Remove default paragraph margin */
         }
 
-        .card-header {
-      background-color: #edb682;
-      color: #fff;
-      padding: 10px;
-      font-weight: bold;
-      text-align: center;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-    }
+        .chat-input {
+            height: 470px;
+            padding: 20px;
+            background-image: url('https://th.bing.com/th/id/OIP.E4G_tsU5rI9c6m1tutNuTQHaHa?pid=ImgDet&rs=1');
+            border-radius: 10px 10px 0px 0px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-position: center;
+            box-shadow: insert 0px 0px 10px -5px rgb(219, 162, 206);
+            background-repeat: no-repeat;
+            opacity: .7;
+        }
+        #chatbox{
+            border-radius: 20px;
+            border-radius: 0px 0px 0px 20px;
+            box-shadow: inset 0px  0px 5px -2px rgb(173, 184, 231);
+        }
+        .chat-input::-webkit-scrollbar{
+            width: 8px;
+            border-radius: 10px ;
+            background-color: palevioletred;
+            box-shadow: inset 0px 0px 5px -2px plum;
 
+        }
+        .chat-input::-webkit-scrollbar-thumb{
+            background-color: rgb(49, 82, 227);
+        }
+
+        .chat-input::-webkit-scrollbar-thumb :hover{
+            background-color: rgb(32, 36, 58);
+        }
   
 
     </style>
@@ -63,20 +84,27 @@
 <body onload="bot_greet('Graduating Student Question');">
     <div class="container at-5">
         <div class="row at-1">
+
         <div class="col-md-6 col-sm-10 text-center">
              <h1 class="display-4 font-weight-normal">G2BOT</h1>
               <img src="https://cdn-icons-png.flaticon.com/512/2040/2040946.png" class="w-75 at-5"/>
         </div>
 
-        <div class="col-md-4 col-sm-8 offset-1 bg-white p-3" id="outer">
-             <div class="main"></div>
+        <div class="col-md-4 col-sm-8 offset-1 bg-white p-3" id="chatbox" class="card-body chatbox">
+           <div class="main"></div>
                 <div class="input-group">
-                    <input type="text" id="chat-input" name="msg" placeholder= "Ask me any thing" autocomplete="off" class="form-control type_msg" required/>
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" id="send-btn">Send</button>
+                    |<input type="text" class="form-control" placeholder="Ask me any thing"  autocomplete="off " id="chat-input" style="height: 50px;" />
+                         <div class="input-group-append">
+                    <button class="btn btn-primary btn-lg" id="send"><i class="fa fa-paper-plane"></i></button>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Bootstrap JS and jQuery -->
+<!-- Bootstrap JS and jQuery -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
@@ -87,10 +115,10 @@
             }
         });
         
-        $('#send-btn').click(function() {
+        $('#send').click(function() {
             var text = $('#chat-input').val();
-            rawText = text; 
-            $('.chatbox').append('<div class="chat-response-wrapper border border-success"><p> <span class="font-weight-bold">Student </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + text + '</p></div>');
+            rawText = text;
+            $('.chatbox').append('<div class="chat-response-wrapper border border-success"><p> <span class="font-weight-bold">Student </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + text + '</p></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>');
             $('#chat-input').val('');
 
             // Scroll to the bottom
@@ -100,7 +128,7 @@
 
         function bot_greet(firstText) {
           $.get("/get", { msg: firstText }).done(function(data) {
-            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">Registrar</span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
+            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">LSPU OSAS </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
             $("#chatbox").append(botHtml);
           });
         }
@@ -108,14 +136,10 @@
         function get_response() {
           $.get("/get", { msg: rawText }).done(function(data) {
             console.log(rawText);
-            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">Registrar</span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
+            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">LSPU OSAS </span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
             $("#chatbox").append(botHtml);
           });
         }
     </script>
 </body>
 </html>
-
-
-
-
