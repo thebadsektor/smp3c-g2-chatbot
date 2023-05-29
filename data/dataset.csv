@@ -34,9 +34,10 @@ Hey,Hello World!
 What's up?,Hello World!
 Who are you?,I am a Chatbot.
 What is your name?,ChatBot.
-1 + 1?, 2
-add one to one, two
-what products to you sell?, tsinelas
-what products to you sell?, slippers
-what products to you sell?, armor sa paa
-Do you sell slippers?, yes
+1 + 1?," 2"
+add one to one," two"
+what products to you sell?," tsinelas"
+what products to you sell?," slippers"
+what products to you sell?," armor sa paa"
+Do you sell slippers?," yes"
+what is love,"love is all about you "
