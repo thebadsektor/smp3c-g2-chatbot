@@ -49,7 +49,7 @@
 
     <title>G2 Chatbot</title>
 </head>
-<body onload="bot_greet('Hello');">
+<body onload="bot_greet('Graduating Student Question');">
     <div class="container-fluid card-container p-10" style="background-color:lightgray">
         <div class="card">
             <div class="card-header font-weight-bold">
@@ -93,7 +93,7 @@
 
         function bot_greet(firstText) {
           $.get("/get", { msg: firstText }).done(function(data) {
-            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">Graduating Student Question</span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
+            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">Registrar</span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
             $("#chatbox").append(botHtml);
           });
         }
@@ -101,7 +101,7 @@
         function get_response() {
           $.get("/get", { msg: rawText }).done(function(data) {
             console.log(rawText);
-            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">Graduating Student Question</span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
+            var botHtml = '<div class="chat-response-wrapper border border-primary"><p> <span class="font-weight-bold">Registrar</span> <span class="text-sm text-secondary" style="font-size: 0.60rem">10:35 AM</span></p><p>' + data + '</p></div>';
             $("#chatbox").append(botHtml);
           });
         }
