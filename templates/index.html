@@ -16,19 +16,34 @@
     <div class="container mt-5">
         <div class="row mt-1">
 
-            <div class="col-md-6 col-sm-10 text-center">
-                <h1 class="display-4 font-weight-normal">G2BOT</h1>
-                 <img src="https://cdn-icons-png.flaticon.com/512/2040/2040946.png" class="w-100 at-10"/>
-                    </div>
-
-                    <div id="chatbox" class="card-body chatbox">
-                    <div class="card-footer">
-                        <div class="input-group">
-                            <input type="text" id="chat-input" name="msg" placeholder="Ask me any thing" autocomplete="off" class="form-control type_msg" required/>
-                            <div class="input-group-append">
-                                <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+        <div class="col-md-6 col-sm-10 text-center">
+             <h1 class="display-4 font-weight-normal">G2BOT</h1>
+              <img src="https://cdn-icons-png.flaticon.com/512/2040/2040946.png" class="w-75 at-5"/>
+        </div>
+                <div class="card">
+                    <div class="card-header msg_head">
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont">
+                                <img src="https://pbs.twimg.com/profile_images/498702531627720704/9MmYXwKX.png" class="rounded-circle user_img">
+                                <span class="online_icon"></span>
+                            </div>
+                            <div class="user_info">
+                                <span>Registrar</span>
+                                <p>Ask me anything!</p>
                             </div>
                         </div>
+                    </div>
+                    <div id="chatbox" class="card-body chatbox">
+                        
+                        
+                    </div>
+                    <div class="card-footer">
+                        <form id="messageArea" class="input-group">
+                            <input type="text" id="chat-input" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
+                            <div class="input-group-append">
+                                <button type="submit" id="send" class="input-group-text send_btn"><i class="fa fa-paper-plane"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -56,6 +71,13 @@
             get_response();
             $('.chatbox').scrollTop($('.chatbox')[0].scrollHeight);
         });
+        var input = document.getElementById("chat-input");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("send").click();
+  }
+});
 
         function bot_greet(firstText) {
           $.get("/get", { msg: firstText }).done(function(data) {
